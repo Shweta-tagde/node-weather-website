@@ -92,7 +92,7 @@ hbs.registerPartials(partialPath)
  app.get ('/weather', (req, res)=>{
      if(!req.query.address){
           return res.send({
-             error:"you must provide a address"
+             error:"you must provide a address first"
          })
         }
         geocode(req.query.address,(error, {latitude,longitude,location}={})=>{
