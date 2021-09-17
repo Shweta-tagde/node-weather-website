@@ -7,6 +7,8 @@ console.log(__dirname)
 //console.log(__filename)
 // console.log( path.join(__dirname, '../public'))
 const app = express()
+// for herko and localhost adding port value
+const port = process.env.PORT || 3000;
  const publicdirectory =path.join(__dirname, '../public')
  app.use(express.static(publicdirectory))
 
@@ -145,6 +147,6 @@ res.render("404",{
 })
 
  // start the server using app.listen
- app.listen(3000,()=>{
- console.log(" server is up on port 3000")
+ app.listen(port,()=>{
+ console.log(" server is up on port" + port)
  })
